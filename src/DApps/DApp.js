@@ -56,7 +56,7 @@ const Eth     = new EthHelpers()
  * @extends {DCLib}
  */
 export default class DApp {
-    /**
+	/**
      * @ignore
      */
 	constructor(params) {
@@ -73,15 +73,15 @@ export default class DApp {
 	    }
 
 		let logic  = DAppsLogic[params.slug]
-        /** DApp name */
+		/** DApp name */
 		this.slug  = params.slug
 		this.code  = params.slug
-        /** @ignore */
+		/** @ignore */
 		this.hash  = Utils.checksum(logic)
-        /** DApp logic */
+		/** DApp logic */
 		this.logic = payChannelWrap(logic)
 
-        /** Add contract's */
+		/** Add contract's */
 		if (params.contract) {
 			console.log('Your contract is add')
 			this.contract_address = params.contract.contract_address
@@ -92,9 +92,9 @@ export default class DApp {
 			this.contract_abi     = _config.contracts.paychannel.abi
 		}
 
-        /** @ignore */
+		/** @ignore */
 		this.Room = false
-        /** @ignore */
+		/** @ignore */
 		this.sharedRoom = new Rtc(Account.get().openkey, 'dapp_room_' + this.hash)
 
 		console.groupCollapsed('DApp %c' + this.slug + ' %ccreated', 'color:orange', 'color:default')
@@ -125,7 +125,7 @@ export default class DApp {
 		console.groupEnd()
 	}
 
-    /**
+	/**
      * Connection of a player with a bankroll
      * @example
      * DApp.connect({bankroller : "auto", paychannel:{deposit:1}}, function(connected, info){})
@@ -182,7 +182,7 @@ export default class DApp {
 			return
 		}, 7777)
 
-        /**    Ifomation fromconnection(id, room_name, bankroller_address) */
+		/**    Ifomation fromconnection(id, room_name, bankroller_address) */
 		this.connection_info = {
 			bankroller_address: bankroller_address
 		}
@@ -228,7 +228,7 @@ export default class DApp {
 
 		if (params.paychannel) {
 
-            // Check than payChannel logic exist
+			// Check than payChannel logic exist
 			if (typeof this.logic.payChannel !== 'object') {
 				console.log('')
 				console.log('')
@@ -250,7 +250,7 @@ export default class DApp {
 		this.updateState()
 	}
 
-    /**
+	/**
      * Open channel for game for player and bankroller
      *
      * @example
@@ -272,7 +272,7 @@ export default class DApp {
 				? contract_address = this.contract_address
 				: contract_address = params.contract.address
 
-            // Check user balance
+			// Check user balance
 			const user_balance = await Eth.getBalances(Account.get().openkey)
 
 			const mineth = 0.01
@@ -281,21 +281,21 @@ export default class DApp {
 			if (mineth !== false && user_balance.eth * 1 < mineth * 1) {
 				console.error(user_balance.eth + ' is very low, you need minimum ' + mineth)
 				reject({error: 'low balance'})
-                // throw new Error('Low ETHs balance')
+				// throw new Error('Low ETHs balance')
 				return false
 			}
 
 			if (minbet !== false && user_balance.bets * 1 < minbet * 1) {
 				console.error('Your BET balance ' + user_balance.bets + ' <  ' + minbet)
 				reject({error: 'low balance'})
-                // throw new Error('Low BETs balance')
+				// throw new Error('Low BETs balance')
 				return false
 			}
 
 			
 			const approve = await Eth.ERC20approve(contract_address, params.deposit)
 
-            // Open channel args
+			// Open channel args
 
 			const channel_id           = Utils.makeSeed()
 			const player_address       = Account.get().openkey
@@ -308,7 +308,7 @@ export default class DApp {
 
 			console.info(channel_id, player_address, bankroller_address, player_deposit, bankroller_deposit, session, ttl_blocks)
             
-            // Sign hash from args
+			// Sign hash from args
 			const signed_args = Account.signHash( Utils.sha3(channel_id, player_address, bankroller_address, player_deposit, bankroller_deposit, session, ttl_blocks, game_data) )
 
 
@@ -351,7 +351,7 @@ export default class DApp {
 			response.session            = 0
 
 			if (response.receipt && response.receipt.transactionHash) {
-                // Set deposit in logic
+				// Set deposit in logic
 				this.logic.payChannel.setDeposit(Utils.dec2bet(player_deposit))
 
 				response.contract_address = response.receipt.to
@@ -368,7 +368,7 @@ export default class DApp {
 	}
 
 
-    /**
+	/**
      * @todo write description and example
      *
      * @param {any} function_name - name contract method
@@ -401,11 +401,11 @@ export default class DApp {
 
 			let local_returns = this.logic[function_name].apply(this, res.args)
 
-            // timestamps broke this check
-            // if (JSON.stringify(local_returns) != JSON.stringify(res.returns)) {
-            // 	console.warn('💣💣💣 the call function results do not converge!')
-            // 	console.log(JSON.stringify(local_returns), JSON.stringify(res.returns))
-            // }
+			// timestamps broke this check
+			// if (JSON.stringify(local_returns) != JSON.stringify(res.returns)) {
+			// 	console.warn('💣💣💣 the call function results do not converge!')
+			// 	console.log(JSON.stringify(local_returns), JSON.stringify(res.returns))
+			// }
 
 			console.groupCollapsed('call "' + function_name + '" log:')
 			console.log('You send args:', function_args)
@@ -437,7 +437,7 @@ export default class DApp {
 	// }
 
 
-    /**
+	/**
      * which produces a trip from the game and bankroller
      *
      * @example
@@ -463,7 +463,7 @@ export default class DApp {
 		if (callback) callback(result)
 	}
 
-    /**
+	/**
      * Closin game channel and distribution balance
      *
      * @todo write description and example
@@ -483,7 +483,7 @@ export default class DApp {
 
 			const open_data = this.connection_info.channel
 
-            // close channel args
+			// close channel args
 			const channel_id         = open_data.channel_id                                      // bytes32 id,
 			const player_balance     = Utils.bet2dec(this.logic.payChannel.getBalance())         //profit + open_data.player_deposit // uint playerBalance,
 			const bankroller_balance = Utils.bet2dec(this.logic.payChannel.getBankrollBalance()) //-profit + open_data.bankroller_deposit // uint bankrollBalance,
@@ -491,7 +491,7 @@ export default class DApp {
 			const bool               = true
 
 			// console.log('@@@@@@@@', player_balance, bankroller_balance)
-            // Sign hash from args
+			// Sign hash from args
 			const signed_args = Account.signHash(Utils.sha3(channel_id, player_balance, bankroller_balance, session, bool))
 
 			console.log('🙏 ask the bankroller to close the channel')
@@ -532,7 +532,7 @@ export default class DApp {
 		})
 	}
 
-    /** Save state this game */
+	/** Save state this game */
 	async updateState(params=false, callback=false) {
 		if (typeof this.connection_info.channel === 'undefined') return
 		// if (typeof this.connection_info.channel.channel_id === 'undefined') return
@@ -599,7 +599,7 @@ export default class DApp {
 		return this.PayChannelContract
 	}
 
-    /** TODO -  Доделывать */
+	/** TODO -  Доделывать */
 	async updateChannel(params, callback = false) {
 
 		// console.log('PARAMS_UPDATE_CHANNEL@', params)
@@ -652,7 +652,7 @@ export default class DApp {
 		if (callback) callback(receipt)
 	}
 
-    /** TODO -  Доделывать */
+	/** TODO -  Доделывать */
 	async updateGame(params, callback = false) {
 
 		const channel_id       = this.connection_info.channel.channel_id
@@ -708,7 +708,7 @@ export default class DApp {
 		if (callback) callback(receipt)
 	}
 	
-    /** TODO -  Доделывать */
+	/** TODO -  Доделывать */
 	async openDispute(params, callback = false) {
 
 		const open_data    = this.connection_info.channel
@@ -747,7 +747,7 @@ export default class DApp {
 	}
 
 
-    /**
+	/**
      * Send message to bankroller with query and
      * waiting response type callback
      *
@@ -780,13 +780,13 @@ export default class DApp {
 			params.type = 'request'
 			params.uiid = uiid
 
-            // Wait response
+			// Wait response
 			Room.once('uiid::' + uiid, result => {
 				if (callback) callback(result)
 				resolve(result.response)
 			})
 
-            // Send request
+			// Send request
 			Room.send(params, delivered => {
 				if (!delivered) {
 					console.error('🙉 Cant send msg to bankroller, connection error')
@@ -798,7 +798,7 @@ export default class DApp {
 		})
 	}
 
-    /**
+	/**
      * Кeceiving a response from bankroller
      *
      * @todo write to example
@@ -819,7 +819,7 @@ export default class DApp {
 	}
 
 
-    /**
+	/**
      * Find to bankroller for game
      *
      * @example
@@ -845,7 +845,7 @@ export default class DApp {
 					return
 				}
 
-                // return bankroller openkey
+				// return bankroller openkey
 				resolve(data.user_id)
 				clearTimeout(noBankroller)
 				this.sharedRoom.off('action::bankroller_active', checkBankroller)

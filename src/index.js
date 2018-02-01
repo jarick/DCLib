@@ -10,7 +10,7 @@
 
 import DCLib from './DC.lib.js'
 window.DCLib = new DCLib()
-export default new DCLib()
+export default window.DCLib
 
 /*
 	TODO: Docs
