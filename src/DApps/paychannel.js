@@ -35,7 +35,7 @@ let _history = []
  * @extends {DApp}
  */
 export default class PayChannel {
-    /**
+	/**
      * @ignore
      */
 	constructor(bankroller_deposit) {
@@ -55,7 +55,7 @@ export default class PayChannel {
 		console.groupEnd()
 	}
 
-    /**
+	/**
      * Change deposit  for game
      *
      * @example
@@ -84,7 +84,7 @@ export default class PayChannel {
 	    return balance
 	}
 
-    /**
+	/**
      * View deposit for game
      *
      * @example
@@ -101,7 +101,7 @@ export default class PayChannel {
 	    return Utils.dec2bet(deposit.player)
 	}
 
-    /**
+	/**
      * view game balance
      *
      * @example
@@ -123,7 +123,7 @@ export default class PayChannel {
 	    return Utils.dec2bet(balance.bankroller)
 	}
 
-    /**
+	/**
      * View game proffit
      *
      * @example
@@ -140,7 +140,7 @@ export default class PayChannel {
 	    return Utils.dec2bet(_profit)
 	}
 
-    /**
+	/**
      * @ignore
      */
 	_getProfit() {
@@ -149,7 +149,7 @@ export default class PayChannel {
 	}
 
 
-    /**
+	/**
      * Add BET transaction to channel
      *
      * @example
@@ -191,7 +191,7 @@ export default class PayChannel {
 		return Utils.dec2bet(_profit)
 	}
 
-    /**
+	/**
      * Print log in console
      *
      * @example
@@ -215,7 +215,7 @@ export default class PayChannel {
 		return _history
 	}
 
-    /**
+	/**
      * Reset balance, depot and proffit game
      * @example
      * window.MyDApp.logic.payChannel.reset()

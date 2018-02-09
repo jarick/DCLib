@@ -46,6 +46,8 @@ const Event  = new EC()
  */
 let _ready = false
 
+let flag = true
+
 
 /**
  * Base class in global namespace.
@@ -88,9 +90,12 @@ export default class DCLib {
 				localStorage.requestBets = true
 				ourApi.addBets( this.Account.get().openkey )
 			}
-			
-			printDocs( window.DCLib )
-			
+
+			if (flag) {
+				printDocs( window.DCLib )
+				flag = false
+			}
+
 			Event.emit('ready')
 			_ready = true
 		})
@@ -239,7 +244,7 @@ export default class DCLib {
 		return Utils.bigInt(random_hash,16).divmod(max-min).remainder.value + min
 	}
 
-    /**
+	/**
      * ## DCLib.fauset(address=false)
      * method need for add free bets on account
      *

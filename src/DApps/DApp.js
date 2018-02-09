@@ -264,7 +264,7 @@ export default class DApp {
      */
 	openChannel(params, game_data=false) {
 		console.group(' 🔐 Open channel with deposit', params.deposit)
-		return new Promise(async (resolve, reject) => {
+		return new Promise(async (resolve, reject) => { 
 			let gamedata = {}
 
 			let contract_address
