@@ -25,16 +25,6 @@
               
                 
                 <li><a
-                  href='#info'
-                  class="">
-                  info
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#dclib'
                   class=" toggle-sibling">
                   DCLib
@@ -164,16 +154,6 @@
                   href='#bet2dec'
                   class="">
                   bet2dec
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#addbets'
-                  class="">
-                  addBets
                   
                 </a>
                 
@@ -549,102 +529,6 @@
         </div>
       </div>
       <div id='split-right' class='relative overflow-auto height-viewport-100'>
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='info'>
-      info
-    </h3>
-    
-    
-  </div>
-  
-
-  <h2>Get ETH account information</h2>
-
-
-  <div class='pre p1 fill-light mt0'>info(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="#accessbalance">accessBalance</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>false</code>)</code>
-	    Addres Ethereum account wallet
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>callback</span> <code class='quiet'>(<a href="#accessbalance">accessBalance</a>
-            = <code>false</code>)</code>
-	    callback function then access balance information
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
-        return balance information
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>&gt; DCLib.Account.info(<span class="hljs-string">'0x4d750610062f1b3ce35117ee3e19cfb657ef6e59'</span>).then( <span class="hljs-function"><span class="hljs-params">r</span> =&gt;</span> {})</pre>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// method return</span>
-<span class="hljs-built_in">Object</span> {
-   <span class="hljs-attr">openkey</span>: address,
-   <span class="hljs-built_in">Object</span> {
-      <span class="hljs-attr">bets</span> : <span class="hljs-number">992.21</span>
-      eth  : <span class="hljs-string">"1.748053851"</span>
-   }
-}</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-          
         
           
             <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -1831,7 +1715,7 @@ ccdd1762f82f0eb4187637ffdda48b3d68ec71c1ce4f8aa4a28f2d41c`</span>,
   <p>Convert BET from decimal, to "human" format, ex: 110000000 = 1.1BET</p>
 
 
-  <div class='pre p1 fill-light mt0'>dec2bet(val: any, r: any, bets: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, toFixed: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  <div class='pre p1 fill-light mt0'>dec2bet(val: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, r: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -1848,32 +1732,17 @@ ccdd1762f82f0eb4187637ffdda48b3d68ec71c1ce4f8aa4a28f2d41c`</span>,
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>val</span> <code class='quiet'>(any)</code>
-	    
+            <span class='code bold'>val</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    bets
+
           </div>
           
         </div>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>r</span> <code class='quiet'>(any
+            <span class='code bold'>r</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>2</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>bets</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>toFixed</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    values after zero
 
           </div>
@@ -1990,88 +1859,6 @@ ccdd1762f82f0eb4187637ffdda48b3d68ec71c1ce4f8aa4a28f2d41c`</span>,
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='addbets'>
-      addBets
-    </h3>
-    
-    
-  </div>
-  
-
-  
-
-  <div class='pre p1 fill-light mt0'>addBets(address: any, callback: any): any</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>address</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>callback</span> <code class='quiet'>(any
-            = <code>false</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        Promise
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> d = <span class="hljs-number">1</span>;</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='account'>
       Account
     </h3>
@@ -2138,15 +1925,8 @@ If we restrict Ethereum to only externally owned accounts and allow only transac
 <p>method recover user account on password</p>
 
 
-  <div class='pre p1 fill-light mt0'>unlockAccount(password: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  <div class='pre p1 fill-light mt0'>unlockAccount(password: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
-  
-    <p>
-      Extends
-      
-        <a href="#account">Account</a>
-      
-    </p>
   
 
   
@@ -2162,7 +1942,7 @@ If we restrict Ethereum to only externally owned accounts and allow only transac
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>password</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            <span class='code bold'>password</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
             = <code>false</code>)</code>
 	    User password for decrypt privateKey and unlock user account
 
@@ -2233,13 +2013,6 @@ If we restrict Ethereum to only externally owned accounts and allow only transac
 
   <div class='pre p1 fill-light mt0'>exportPrivateKey(password: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
   
-  
-    <p>
-      Extends
-      
-        <a href="#account">Account</a>
-      
-    </p>
   
 
   
@@ -2321,13 +2094,6 @@ If we restrict Ethereum to only externally owned accounts and allow only transac
   <div class='pre p1 fill-light mt0'>get(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
   
-    <p>
-      Extends
-      
-        <a href="#account">Account</a>
-      
-    </p>
-  
 
   
   
@@ -2401,13 +2167,6 @@ UTF-8 HEX decoded and enveloped as follows:
 
   <div class='pre p1 fill-light mt0'>sign(raw: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
-  
-    <p>
-      Extends
-      
-        <a href="#account">Account</a>
-      
-    </p>
   
 
   
@@ -2494,7 +2253,7 @@ UTF-8 HEX decoded and enveloped as follows:
 <p>method sign hashMessage</p>
 
 
-  <div class='pre p1 fill-light mt0'>signHash(hash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+  <div class='pre p1 fill-light mt0'>signHash(hash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
   
   
 
@@ -2511,7 +2270,7 @@ UTF-8 HEX decoded and enveloped as follows:
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>hash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>hash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    message which need turn in hash
 
           </div>
@@ -2526,7 +2285,7 @@ UTF-8 HEX decoded and enveloped as follows:
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         hashed Message
 
       
@@ -2574,7 +2333,7 @@ UTF-8 HEX decoded and enveloped as follows:
 <p>method delete account of localStorage</p>
 
 
-  <div class='pre p1 fill-light mt0'>reset(): any</div>
+  <div class='pre p1 fill-light mt0'>reset()</div>
   
   
 
@@ -2589,14 +2348,6 @@ UTF-8 HEX decoded and enveloped as follows:
 
   
 
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        none
-
-      
-    
   
 
   
@@ -2623,7 +2374,7 @@ UTF-8 HEX decoded and enveloped as follows:
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>sendBets(toInput, amountInput, callback, to, amount)</span>
+            <span class='code strong strong truncate'>sendBets(toInput, amountInput, callback)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2636,7 +2387,7 @@ UTF-8 HEX decoded and enveloped as follows:
 you can use it with "await"</p>
 
 
-  <div class='pre p1 fill-light mt0'>sendBets(toInput: any, amountInput: any, callback: <a href="#ontxmined">onTxMined</a>, to: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, amount: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): Promise.receipt</div>
+  <div class='pre p1 fill-light mt0'>sendBets(toInput: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, amountInput: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, callback: <a href="#ontxmined">onTxMined</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
   
   
 
@@ -2653,16 +2404,18 @@ you can use it with "await"</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>toInput</span> <code class='quiet'>(any)</code>
-	    
+            <span class='code bold'>toInput</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    bytes32 address
+
           </div>
           
         </div>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>amountInput</span> <code class='quiet'>(any)</code>
-	    
+            <span class='code bold'>amountInput</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    how many bets send, 1 - 1BET, 22 - 22BET
+
           </div>
           
         </div>
@@ -2677,24 +2430,6 @@ you can use it with "await"</p>
           
         </div>
       
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>to</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    bytes32 address
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>amount</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    how many bets send, 1 - 1BET, 22 - 22BET
-
-          </div>
-          
-        </div>
-      
     </div>
   
 
@@ -2703,7 +2438,7 @@ you can use it with "await"</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>Promise.receipt</code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
         return web3.send promise,
 
       
@@ -2809,7 +2544,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
   <h2>Getting balances for Bets and Ethereum</h2>
 
 
-  <div class='pre p1 fill-light mt0'>getBalances(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, callback: <a href="#accessbalance">accessBalance</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  <div class='pre p1 fill-light mt0'>getBalances(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="#accessbalance">accessBalance</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
   
   
 
@@ -2826,7 +2561,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    Addres Ethereum account wallet
 
           </div>
@@ -2851,7 +2586,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
         return balance information
 
       
@@ -2902,7 +2637,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
 <p>method need for getting balance in ETH</p>
 
 
-  <div class='pre p1 fill-light mt0'>getEthBalance(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>getEthBalance(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></div>
   
   
 
@@ -2919,7 +2654,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
             = <code>false</code>)</code>
 	    account addres for check balance
 
@@ -2945,7 +2680,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></code>:
         ETH balance
 
       
@@ -2993,7 +2728,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
 <p>method need for getting balance in BET</p>
 
 
-  <div class='pre p1 fill-light mt0'>getBetBalance(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>getBetBalance(address: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></div>
   
   
 
@@ -3010,7 +2745,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            <span class='code bold'>address</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
             = <code>false</code>)</code>
 	    account addres for check balance
 
@@ -3036,7 +2771,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></code>:
         BET balance
 
       
@@ -3086,7 +2821,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
 <p>method sign hashMessage</p>
 
 
-  <div class='pre p1 fill-light mt0'>signHash(hash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+  <div class='pre p1 fill-light mt0'>signHash(hash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
   
   
 
@@ -3103,7 +2838,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>hash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>hash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    message which need turn in hash
 
           </div>
@@ -3118,7 +2853,7 @@ DCLib.Account.sendBets(<span class="hljs-string">'0xAb5...'</span>, <span class=
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         hashed Message
 
       
@@ -3459,15 +3194,7 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>Logic</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>logic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+            <span class='code bold'>Logic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
 	    DApp logic
 
           </div>
@@ -3657,7 +3384,7 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>connect(params, callback, bankroller, optional, deposit)</span>
+            <span class='code strong strong truncate'>connect(params, callback)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -3668,7 +3395,7 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
   <p>Connection of a player with a bankroll</p>
 
 
-  <div class='pre p1 fill-light mt0'>connect(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, callback: any, bankroller: Object.string, optional: Object.Object, deposit: Object.Object.string): [type]</div>
+  <div class='pre p1 fill-light mt0'>connect(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, callback: any): [type]</div>
   
   
 
@@ -3690,6 +3417,49 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
 	    
           </div>
           
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.bankroller</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>address or 'auto' for autofind bankroller
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.optional</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+  </td>
+  <td class='break-word'><span>paychannel config
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.deposit</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>paychannel deposit
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
         </div>
       
         <div class='space-bottom0'>
@@ -3697,33 +3467,6 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
             <span class='code bold'>callback</span> <code class='quiet'>(any
             = <code>false</code>)</code>
 	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>bankroller</span> <code class='quiet'>(Object.string)</code>
-	    address or 'auto' for autofind bankroller
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>optional</span> <code class='quiet'>(Object.Object)</code>
-	    paychannel config
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>deposit</span> <code class='quiet'>(Object.Object.string)</code>
-	    paychannel deposit
-
           </div>
           
         </div>
@@ -3813,7 +3556,7 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>openChannel(params, game_data, deposit)</span>
+            <span class='code strong strong truncate'>openChannel(params, game_data)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -3824,7 +3567,7 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
   <p>Open channel for game for player and bankroller</p>
 
 
-  <div class='pre p1 fill-light mt0'>openChannel(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, game_data: any, deposit: Object.number): any</div>
+  <div class='pre p1 fill-light mt0'>openChannel(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, game_data: any)</div>
   
   
 
@@ -3846,6 +3589,31 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
 
           </div>
           
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>params.deposit</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+  </td>
+  <td class='break-word'><span>quantity bets for game
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
         </div>
       
         <div class='space-bottom0'>
@@ -3857,28 +3625,11 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
           
         </div>
       
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>deposit</span> <code class='quiet'>(Object.number)</code>
-	    quantity bets for game
-
-          </div>
-          
-        </div>
-      
     </div>
   
 
   
 
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        none
-
-      
-    
   
 
   
@@ -3915,7 +3666,7 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
 
   
 
-  <div class='pre p1 fill-light mt0'>call(function_name: any, function_args: any, callback: any): any</div>
+  <div class='pre p1 fill-light mt0'>call(function_name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, function_args: [any], callback: any)</div>
   
   
 
@@ -3932,7 +3683,7 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>function_name</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>function_name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    name contract method
 
           </div>
@@ -3941,7 +3692,7 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>function_args</span> <code class='quiet'>(any
+            <span class='code bold'>function_args</span> <code class='quiet'>([any]
             = <code>[]</code>)</code>
 	    
           </div>
@@ -3961,14 +3712,6 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
 
   
 
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        
-
-      
-    
   
 
   
@@ -4099,7 +3842,7 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
   <p>Closin game channel and distribution balance</p>
 
 
-  <div class='pre p1 fill-light mt0'>closeChannel(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): any</div>
+  <div class='pre p1 fill-light mt0'>closeChannel(params: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
   
   
 
@@ -4128,14 +3871,6 @@ This is web3.eth.contract instanse of our <a href="https://ropsten.etherscan.io/
 
   
 
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        
-
-      
-    
   
 
   
@@ -4638,7 +4373,7 @@ waiting response type callback</p>
   <p>Find to bankroller for game</p>
 
 
-  <div class='pre p1 fill-light mt0'>findBankroller(deposit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+  <div class='pre p1 fill-light mt0'>findBankroller(deposit: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
   
   
 
@@ -4655,7 +4390,7 @@ waiting response type callback</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>deposit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            <span class='code bold'>deposit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>false</code>)</code>
 	    bets for game
 
@@ -4671,7 +4406,7 @@ waiting response type callback</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         bankroller openkey
 
       
@@ -4926,7 +4661,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
   <p>Change deposit  for game</p>
 
 
-  <div class='pre p1 fill-light mt0'>setDeposit(d: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+  <div class='pre p1 fill-light mt0'>setDeposit(d: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -4943,7 +4678,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>d</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+            <span class='code bold'>d</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    number value to set deposit
 
           </div>
@@ -4958,7 +4693,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         New deposit
 
       
@@ -5003,7 +4738,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
   <p>View deposit for game</p>
 
 
-  <div class='pre p1 fill-light mt0'>getDeposit(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+  <div class='pre p1 fill-light mt0'>getDeposit(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -5021,7 +4756,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         Game deposit
 
       
@@ -5065,7 +4800,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
   <p>view game balance</p>
 
 
-  <div class='pre p1 fill-light mt0'>getBalance(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+  <div class='pre p1 fill-light mt0'>getBalance(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -5083,7 +4818,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         Game balance
 
       
@@ -5127,7 +4862,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
   <p>View game proffit</p>
 
 
-  <div class='pre p1 fill-light mt0'>getProfit(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+  <div class='pre p1 fill-light mt0'>getProfit(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -5145,7 +4880,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         Game proffit
 
       
@@ -5178,7 +4913,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>addTX(p, convert, profit)</span>
+            <span class='code strong strong truncate'>addTX(p, convert)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -5189,7 +4924,7 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
   <p>Add BET transaction to channel</p>
 
 
-  <div class='pre p1 fill-light mt0'>addTX(p: any, convert: bool, profit: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | int))</div>
+  <div class='pre p1 fill-light mt0'>addTX(p: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | int), convert: bool)</div>
   
   
 
@@ -5206,8 +4941,9 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>p</span> <code class='quiet'>(any)</code>
-	    
+            <span class='code bold'>p</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | int))</code>
+	    TX value in BETs
+
           </div>
           
         </div>
@@ -5217,15 +4953,6 @@ Also you can get current state getBalance getDeposit or printLog for debug.</p>
             <span class='code bold'>convert</span> <code class='quiet'>(bool
             = <code>true</code>)</code>
 	    convet from BET to microbet, default - true
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>profit</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | int))</code>
-	    TX value in BETs
 
           </div>
           
